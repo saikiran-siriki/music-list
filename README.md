@@ -1,12 +1,31 @@
-# Getting Started with Create React App
+## Project Structure
+- Top100 (Contains the core state of the application)
+   - Select (component for displaying categories)
+   - DateFilter (external library)
+   - Accordion (to display music as well as the details)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+### Select component
+Props (defaultOption, setSelected, options, name)
+- defaultOption - Sets the default option for the select dropdown (Currently not using this)
+- setSelected - event triggered when select option changes (passes the selected value as arg)
+- options - accepts data in the {value, label} format to render options
 
-## Available Scripts
+### Accordion component
+Props (data)
+- data - takes data in the format of {title, body}
+- We are using isActive and isFavorite to market an item as active or favorite
+- Has a child Accordion item which is purely for displaying accordion item
 
-In the project directory, you can run:
 
-### `npm start`
+## Implementation details
+- We fetch the data from the api on initial render in the Top100jsx component
+- We save the initial api data in the variable `data`
+- We also filter out all the unique categories from the response to render our categories `Select` filter
+- DateFilter displays date from 1960 to current date by default
+- We trigger events whenever we change date or category
+- We always use `filteredData` as single source of truth to display items. `data` exists purely to reset state
+
+### `npm i && npm start`
 
 Runs the app in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
@@ -14,57 +33,4 @@ Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 The page will reload when you make changes.\
 You may also see any lint errors in the console.
 
-### `npm test`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)

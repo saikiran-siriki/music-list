@@ -1,0 +1,10 @@
+.select-parent{
+    display: flex;
+    flex-direction: column;
+    max-width: 200px;
+    align-items: flex-start;
+}
+
+.select-label {
+    color: #fff
+}

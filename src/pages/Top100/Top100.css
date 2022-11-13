@@ -1,0 +1,19 @@
+.body-item-parent {
+    text-align: left;
+    
+}
+
+.top100 {
+    background: rgb(150,50,255);
+    min-height: 100vh
+}
+
+.filters {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+}
+
+.body-item {
+    padding: 0.25rem
+}

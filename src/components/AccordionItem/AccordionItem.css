@@ -1,0 +1,40 @@
+.accordion-item {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid black;
+    margin-bottom: 10px;
+    border-radius: 6px;
+    background-color: #eee;
+  }
+  
+  .accordion-header {
+    padding: 10px;
+    position: relative;
+    cursor: pointer;
+    text-align: left;
+    font-weight: bold;
+  }
+  
+  .accordion-header:after {
+    position: absolute;
+    content: "+";
+    right: 10px;
+  }
+  .accordion-header.active:after {
+    transform: rotate(45deg);
+  }
+  
+  .accordion-body {
+    border-top: 1px solid black;
+    padding: 10px;
+  }
+
+  .checked {
+    color: orange;
+  }
+
+  .header-title {
+    padding-left: 1rem
+  }
+  
